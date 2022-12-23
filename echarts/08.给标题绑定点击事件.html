@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.min.js"></script>
+    <title>echarts</title>
+  </head>
+  <body>
+    <div
+      id="root"
+      style="outline: 1px solid red; height: 90vh; width: 90vw"
+    ></div>
+    <script>
+      const div = document.getElementById("root");
+      const myChart = echarts.init(div);
+      window.onresize = function () {
+        myChart.resize();
+      };
+      const option = {
+        title: {
+          text: "Referer",
+          left: "center",
+          top: "middle",
+          textStyle: {
+            color: "red",
+            fontSize: 32,
+          },
+          triggerEvent: true,
+        },
+        series: [
+          {
+            type: "pie",
+            color: "white",
+            radius: "50%",
+            data: [{ value: 1048, name: "Search Engine" }],
+            label: {
+              show: false,
+            },
+          },
+          {
+            type: "pie",
+            radius: ["50%", "70%"],
+            data: [
+              { value: 1048, name: "Engine" },
+              { value: 1048, name: "Searchne" },
+            ],
+            label: {
+              show: false,
+            },
+          },
+        ],
+      };
+      myChart.setOption(option);
+      myChart.on("click", function (arg) {
+        console.log(arg.event.target.id);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+table,
+th,
+td {
+  border: 1px solid red;
+  border-collapse: collapse;
+}
+th {
+  background: black;
+  color: yellowgreen;
+}
+td {
+  color: aqua;
+}
+/* odd是奇数，even是偶数 */
+tr:nth-child(odd) {
+  background: #eee;
+}
+tr > td:nth-child(1) {
+  color: black;
+  text-align: center;
+}
+tr > td:nth-child(2) {
+  color: black;
+  text-align: center;
+  text-decoration: underline;
+}
+/* n从0开始计数 */
+tr > td:nth-child(n + 8) {
+  font-weight: bold;
+  color: red;
+}
+tr > td:nth-child(-n + 1) {
+  font-weight: 700;
+  color: brown;
+}
+table tbody tr.test1 {
+  background: blueviolet;
+}

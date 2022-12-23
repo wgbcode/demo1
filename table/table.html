@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="table.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      <thead>
+        <!--rowspan 表示一排span；colspan表示倒塌的span-->
+        <tr>
+          <th rowspan="2">序号</th>
+          <th colspan="3">李一</th>
+          <th>张二</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+        </tr>
+        <tr>
+          <th>李一</th>
+          <th>张二</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+          <th>黄三</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr class="test1">
+          <td>2</td>
+          <td>a2</td>
+          <td>b2</td>
+          <td>c2</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>a3</td>
+          <td>b3</td>
+          <td>c3</td>
+          <td>a1</td>
+          <td>b1</td>
+          <td>c1</td>
+          <td>b1</td>
+          <td>c1</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // 网址：https://blog.csdn.net/weixin_43757001/article/details/90526232
+      const table = document.getElementById("table");
+      console.log(table);
+      // HTMLCollection：打印出table中的所有tr。（rows：所有行）
+      console.log(table.rows);
+      // HTMLCollection：打印出tabel.tr中的th或td（cells：细胞）
+      console.log(table.rows[0].cells);
+      table.rows[3].cells[3].innerHTML = "你好啊，数据已添加！";
+    </script>
+  </body>
+</html>

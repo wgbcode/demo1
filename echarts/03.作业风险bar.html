@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.min.js"></script>
+    <title>echarts</title>
+  </head>
+  <body>
+    <div
+      id="root"
+      style="outline: 1px solid red; height: 90vh; width: 90vw"
+    ></div>
+    <script>
+      const div = document.getElementById("root");
+      const myChart = echarts.init(div);
+      window.onresize = function () {
+        myChart.resize();
+      };
+      const option = {
+        grid: {
+          top: "middle",
+          height: "75%",
+          containLabel: true,
+        },
+        xAxis: {
+          type: "category",
+          data: ["未开工", "进行中", "已完工", "间断", "取消"],
+          axisTick: { show: false },
+          axisLabel: { show: true, fontSize: 12 },
+        },
+        yAxis: {
+          type: "value",
+          splitNumber: 3,
+          axisLine: { show: false },
+          axisLabel: { show: false },
+          splitLine: { show: true },
+        },
+        color: "#167ab5",
+        series: [
+          {
+            type: "bar",
+            data: [34, 63, 98, 77, 83],
+            barWidth: "50%",
+            label: {
+              show: true,
+              position: "top",
+              formatter: "{c}",
+              fontSize: 12,
+            },
+          },
+        ],
+      };
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>

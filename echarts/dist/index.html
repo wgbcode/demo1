@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.min.js"></script>
+    <title>echarts</title>
+  </head>
+  <body>
+    <div id="root" style="outline: 1px solid red; height: 90vh; width: 90vw"></div>
+    <script>var div = document.getElementById("root");
+var myChart = echarts.init(div);
+
+window.onresize = function () {
+  myChart.resize();
+};
+
+var option = {
+  grid: {
+    top: "middle",
+    height: "55%",
+    containLabel: true
+  },
+  xAxis: {
+    type: "category",
+    data: ["同期值", "计划值", "实际值"],
+    axisTick: {
+      show: false
+    },
+    axisLabel: {
+      show: false
+    }
+  },
+  yAxis: {
+    type: "value",
+    name: "次/百千米*年",
+    splitNumber: 3,
+    axisLine: {
+      show: true
+    }
+  },
+  series: [{
+    name: "xxx",
+    type: "bar",
+    data: [{
+      value: 0.5,
+      itemStyle: {
+        color: "red"
+      }
+    }, {
+      value: 0.55,
+      itemStyle: {
+        color: "blue"
+      }
+    }, {
+      value: 0.7,
+      itemStyle: {
+        color: "yellow"
+      }
+    }],
+    barWidth: "30%",
+    markLine: {
+      symbol: "none",
+      data: [{
+        type: "average"
+      }],
+      label: {
+        show: false
+      }
+    }
+  }]
+};
+myChart.setOption(option);</script>
+  </body>
+</html>
